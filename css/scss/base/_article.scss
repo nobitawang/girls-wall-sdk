@@ -1,0 +1,20 @@
+#article {
+  .container {
+    position: relative;
+    border: 0px;
+    img.img-rounded {
+      position: absolute;
+      cursor: move;
+
+      @include trans(width, 0.5s);
+      &:hover {
+        z-index: 100000 !important;
+      }
+      &.onActive {
+
+        z-index: 100000 !important;
+        width: 200px !important;
+      }
+    }
+  }
+}

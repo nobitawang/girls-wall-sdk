@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8">
+
+  <title>我的收藏盒</title>
+
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Karla:400,700">
+  <link rel="stylesheet" href="js/lib/lightbox/css/screen.css" media="screen"/>
+  <link rel="stylesheet" href="js/lib/lightbox/css/lightbox.css" media="screen"/>
+  <script type="text/javascript" src="js/lib/require/require.min.js"></script>
+  <script type="text/javascript" src="js/app/func/config.js"></script>
+  <script type="text/javascript">
+    require(['jquery','domReady!', 'common'], function($) {
+      requirejs(["share/main"]);
+    });
+  </script>
+</head>
+<body>
+
+<div class="wrapper">
+  <section id="examples" class="section examples-section">
+    <header>
+      <h2 class="section-header">收藏盒</h2>
+    </header>
+    <div class="image-row">
+    </div>
+  </section>
+</div>
+<script id="box-item-template" type="text/x-jsrender">
+  <a class="example-image-link" href="{{>thumb.replace('300x300', '800x600')}}" data-lightbox="example-1">
+    <img class="example-image" src="{{>thumb}}" width="150" height="150"/>
+  </a>
+</script>
+</body>
+</html>

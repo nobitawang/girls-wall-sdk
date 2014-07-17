@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Pixnet Hackathon</title>
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+  <link rel="stylesheet" type="text/css" href="css/style/style.css"/>
+  <link rel="stylesheet" type="text/css" href="js/lib/jqueryUI/css/smoothness/jquery-ui-1.9.2.custom.min.css"/>
+  <script type="text/javascript" src="js/lib/require/require.min.js"></script>
+  <script type="text/javascript" src="js/app/func/config.js"></script>
+  <!--<script type="text/javascript" src="http://socketapi.herokuapp.com/socket.io/socket.io.js"></script>-->
+  <script type="text/javascript">
+    require(['jquery','domReady!', 'common'], function($) {
+//        requirejs(["app/header/header"]);
+        requirejs(["app/article/article"]);
+//        requirejs(["app/aside/aside"]);
+//        requirejs(["app/footer/footer"]);
+    });
+  </script>
+</head>
+<body>
+<!--<div id="header" class="header">-->
+<!--</div>-->
+<!-- ==============================content==================================== -->
+
+  <!-- ==============================aside==================================== -->
+  <div id="aside" class="aside">
+  </div>
+  <!-- ==============================article==================================== -->
+  <div id="article" class="article"></div>
+<!--
+<div class="clear"></div>
+<footer class="footer" id="footer"></footer>
+ -->
+</body>
+</html>
