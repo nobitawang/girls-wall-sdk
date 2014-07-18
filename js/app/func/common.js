@@ -6,7 +6,7 @@
     $.app.data = {};
     $.app.service = {};
     $.app.service = {
-      list: "api/list.php",
+      list: "",
       share: "api/share.php",
       save: "api/save.php",
       getshare: "api/getshare.php"
