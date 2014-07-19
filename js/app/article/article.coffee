@@ -6,6 +6,18 @@ define ['jquery','underscore','deepmodel','domReady!', 'common',
     itemTmpId: '#item-template'
     initialize: ->
       @$el.load(@tmpUrl)
+
+
+      pixnet.init({
+        consumerKey: "6e6486d3702401c82905633c3519132f"
+        consumerSecret: "de013d92491a69c6470e83dc3e792b9b"
+        callbackUrl: "http://106.186.118.85/~nobita/girls-wall-sdk/"
+      })
+
+      pixnet.login(@getList)
+
+
+    getList: =>
       pixnet.mainpage.getAlbumsByCategory((data)=>
         # ============================= callback logic =============================
         len = data.length
@@ -30,10 +42,12 @@ define ['jquery','underscore','deepmodel','domReady!', 'common',
         )
         # ============================= callback logic END =============================
       , 'hot', 1, {
-        count: 200
+        count: 100
         strict_filter: 1
         ios: 1
       })
+
+
 
     events:
       "click img.img-rounded": "active"
