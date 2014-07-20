@@ -43,7 +43,7 @@
         });
       };
 
-      articleView.prototype.getList = function() {
+      articleView.prototype.getList = function(data) {
         var index, item, len, shuffle,
           _this = this;
         len = data.length;

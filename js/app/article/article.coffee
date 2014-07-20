@@ -33,7 +33,7 @@ define ['jquery','underscore','deepmodel','domReady!', 'common',
       # ============================= 使用需要授權的功能 =============================
 
 
-    getList: =>
+    getList: (data)=>
       # ============================= callback logic =============================
       len = data.length
       index = data.length
