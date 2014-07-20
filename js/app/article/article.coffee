@@ -11,7 +11,7 @@ define ['jquery','underscore','deepmodel','domReady!', 'common',
       pixnet.init({
         consumerKey: "6e6486d3702401c82905633c3519132f"
         consumerSecret: "de013d92491a69c6470e83dc3e792b9b"
-        callbackUrl: "http://106.186.118.85/~nobita/girls-wall-sdk/"
+        callbackUrl: "http://nobitawang.github.io/girls-wall-sdk/"
       })
 
       @getList()
