@@ -23,7 +23,7 @@ requirejs.config({
         common          : 'app/func/common',
         isotope         : 'lib/jquery.isotope/jquery.isotope.min',
         lightbox        : 'lib/lightbox/js/lightbox-2.6.min',
-        jssdk           : '../bower_components/jssdk/lib/all.min'
+        jssdk           : 'lib/jssdk/all.min'
     },
     shim: {
         'underscore'     : {exports:'_'},
