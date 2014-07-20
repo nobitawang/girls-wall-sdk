@@ -36,7 +36,8 @@
 
       articleView.prototype.getAccount = function() {
         return pixnet.users.getAccount(function(d) {
-          return console.log(d);
+          console.log(d);
+          return alert("Welcome, " + d.account.display_name);
         });
       };
 

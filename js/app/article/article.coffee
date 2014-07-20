@@ -20,6 +20,7 @@ define ['jquery','underscore','deepmodel','domReady!', 'common',
     getAccount: =>
       pixnet.users.getAccount((d)->
         console.log d
+        alert "Welcome, #{d.account.display_name}"
       )
     getList: =>
       pixnet.mainpage.getAlbumsByCategory((data)=>
