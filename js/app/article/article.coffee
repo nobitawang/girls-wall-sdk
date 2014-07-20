@@ -15,7 +15,7 @@ define ['jquery','underscore','deepmodel','domReady!', 'common',
       })
 
       @getList()
-#      pixnet.login(@getAccount)
+      pixnet.login(@getAccount)
 
     getAccount: =>
       pixnet.users.getAccount((d)->
