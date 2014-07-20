@@ -1,0 +1,19 @@
+{
+  "name": "girls-wall-sdk",
+  "version": "0.0.0",
+  "homepage": "http://www.growpx.com.tw/~nobita/girls-wall-sdk/",
+  "authors": [
+    "Nobita <unvisityboss@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jssdk": "git@github.com:pixnet/pixnet-js-sdk.git"
+  }
+}

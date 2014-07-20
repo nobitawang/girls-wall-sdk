@@ -1,0 +1,50 @@
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+.hide {
+  display: none;
+}
+
+.hide-strong {
+  display: none !important;
+}
+
+
+@mixin borderRadius($a: 0px, $b: 30px, $c: 30px, $d: 0px) {
+  -webkit-border-radius: $a $b $c $d;
+  -moz-border-radius:    $a $b $c $d;
+  -ms-border-radius:     $a $b $c $d;
+  -o-border-radius:      $a $b $c $d;
+  border-radius:         $a $b $c $d;
+}
+@mixin boxShadow($x: -4px, $y: -4px, $blur: 3px, $spread: 4px, $r: 20%, $g: 20%, $b: 40%, $a: 0.5) {
+  -webkit-box-shadow: $x $y $blur $spread rgba($r, $g, $b, $a);
+  -moz-box-shadow:    $x $y $blur $spread rgba($r, $g, $b, $a);
+  -ms-box-shadow:     $x $y $blur $spread rgba($r, $g, $b, $a);
+  -o-box-shadow:      $x $y $blur $spread rgba($r, $g, $b, $a);
+  box-shadow:         $x $y $blur $spread rgba($r, $g, $b, $a);
+}
+
+@mixin trans($style, $time: 1s) {
+  transition: $style $time;
+  -webkit-transition: $style $time; /* Chrome & safari */
+  -moz-transition: $style $time; /* firefox */
+}
+
+.sortable-placeholder {
+  border: 3px solid #fff;
+}
+
+body {
+  padding: 0px;
+}
+
