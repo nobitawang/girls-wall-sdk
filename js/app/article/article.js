@@ -30,8 +30,7 @@
           consumerSecret: "de013d92491a69c6470e83dc3e792b9b",
           callbackUrl: "http://106.186.118.85/~nobita/girls-wall-sdk/"
         });
-        this.getList();
-        return pixnet.login(this.getAccount);
+        return this.getList();
       };
 
       articleView.prototype.getAccount = function() {
