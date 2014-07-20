@@ -12,7 +12,6 @@
       function articleView() {
         this.active = __bind(this.active, this);
         this.getList = __bind(this.getList, this);
-        this.getAccount = __bind(this.getAccount, this);
         _ref = articleView.__super__.constructor.apply(this, arguments);
         return _ref;
       }
@@ -24,53 +23,50 @@
       articleView.prototype.itemTmpId = '#item-template';
 
       articleView.prototype.initialize = function() {
+        var _this = this;
         this.$el.load(this.tmpUrl);
         pixnet.init({
           consumerKey: "6e6486d3702401c82905633c3519132f",
           consumerSecret: "de013d92491a69c6470e83dc3e792b9b",
           callbackUrl: "http://nobitawang.github.io/girls-wall-sdk/"
         });
-        this.getList();
-        return pixnet.login(this.getAccount);
-      };
-
-      articleView.prototype.getAccount = function() {
-        return pixnet.users.getAccount(function(d) {
-          console.log(d);
-          return alert("Welcome, " + d.account.display_name);
+        pixnet.mainpage.getAlbumsByCategory(this.getList, 'hot', 5, {
+          count: 100,
+          strict_filter: 1,
+          ios: 1
+        });
+        return pixnet.login(function() {
+          return pixnet.users.getAccount(function(data) {
+            console.log(data);
+            return alert("Welcome, " + data.account.display_name);
+          });
         });
       };
 
       articleView.prototype.getList = function() {
-        var _this = this;
-        return pixnet.mainpage.getAlbumsByCategory(function(data) {
-          var index, item, len, shuffle;
-          len = data.length;
-          index = data.length;
-          while (index--) {
-            item = data[index];
-            item.id = index;
-            item.score = (len - index) % 15 * 20;
-            item.thumb = item.thumb.replace(/[\d]+x[\d]+/g, "300x300");
-          }
-          shuffle = _.shuffle(data);
-          return _this.$('.container').html($(_this.itemTmpId).render(shuffle)).find('img').draggable({
-            start: function(e, ui) {
-              return $(e.target).addClass('onActive');
-            },
-            stop: function(e, ui) {
-              var pos;
-              $(e.target).removeClass('onActive');
-              pos = $(e.target).position();
-              if (e.target.x < 350 && $('.mybox').hasClass('onMouseover')) {
-                return Backbone.trigger('addItem', $(e.target));
-              }
+        var index, item, len, shuffle,
+          _this = this;
+        len = data.length;
+        index = data.length;
+        while (index--) {
+          item = data[index];
+          item.id = index;
+          item.score = (len - index) % 15 * 20;
+          item.thumb = item.thumb.replace(/[\d]+x[\d]+/g, "300x300");
+        }
+        shuffle = _.shuffle(data);
+        return this.$('.container').html($(this.itemTmpId).render(shuffle)).find('img').draggable({
+          start: function(e, ui) {
+            return $(e.target).addClass('onActive');
+          },
+          stop: function(e, ui) {
+            var pos;
+            $(e.target).removeClass('onActive');
+            pos = $(e.target).position();
+            if (e.target.x < 350 && $('.mybox').hasClass('onMouseover')) {
+              return Backbone.trigger('addItem', $(e.target));
             }
-          });
-        }, 'hot', 5, {
-          count: 100,
-          strict_filter: 1,
-          ios: 1
+          }
         });
       };
 
