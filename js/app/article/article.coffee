@@ -46,7 +46,7 @@ define ['jquery','underscore','deepmodel','domReady!', 'common',
               Backbone.trigger('addItem', $(e.target))
         )
         # ============================= callback logic END =============================
-      , 'hot', 1, {
+      , 'hot', 5, {
         count: 100
         strict_filter: 1
         ios: 1

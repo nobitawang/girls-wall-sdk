@@ -67,7 +67,7 @@
               }
             }
           });
-        }, 'hot', 1, {
+        }, 'hot', 5, {
           count: 100,
           strict_filter: 1,
           ios: 1
